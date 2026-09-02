@@ -16,8 +16,24 @@ First, install the dependencies:
 npm install
 ```
 
-The app uses port `3000` by default. If I need a different port, I can copy
-`.env.example` to `.env` and change the value there.
+The app uses port `3000` unless I set a `PORT` environment variable.
+
+To use a different port in PowerShell:
+
+```powershell
+$env:PORT = "4000"
+npm run dev
+```
+
+On macOS or Linux:
+
+```bash
+PORT=4000 npm run dev
+```
+
+`.env.example` shows the setting, but the app does not load `.env` files
+automatically. On Render, the platform supplies `PORT`, so I don't need to
+upload a `.env` file or set the port myself.
 
 ## Running the project
 
