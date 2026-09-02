@@ -13,6 +13,7 @@ app.use((_req, res) => {
   });
 });
 
+// Express needs all four parameters to recognise an error handler.
 function handleErrors(
   error: Error,
   _req: Request,
