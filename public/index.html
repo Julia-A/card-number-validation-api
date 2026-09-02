@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Card number validation</title>
+    <meta name="description" content="A simple page for trying the card number validation API.">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Card number validation</h1>
+      <p>A small page to try out my API. Enter a test card number below.</p>
+
+      <form id="card-form">
+        <label for="card-number">Card number</label>
+        <input
+          id="card-number"
+          type="text"
+          inputmode="numeric"
+          autocomplete="off"
+          spellcheck="false"
+          aria-describedby="card-hint"
+          placeholder="4242 4242 4242 4242"
+        >
+        <p id="card-hint" class="hint">Spaces and hyphens are fine. Please use test numbers, not real card details.</p>
+        <button id="validate-button" type="submit">Validate</button>
+        <p id="result" role="status" aria-live="polite" aria-atomic="true"></p>
+      </form>
+
+      <section aria-labelledby="about-heading">
+        <h2>What does it check?</h2>
+        <p>The number's length, digits, and Luhn checksum. Passing these checks doesn't mean a card exists or has money on it.</p>
+        <p>This form sends a request to <code>POST /api/cards/validate</code>.</p>
+        <a href="https://github.com/Julia-A/card-number-validation-api">View the code on GitHub</a>
+      </section>
+    </main>
+  </body>
+</html>

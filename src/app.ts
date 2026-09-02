@@ -1,9 +1,11 @@
 import express, { NextFunction, Request, Response } from "express";
+import path from "node:path";
 import cardRouter from "./routes/card.routes";
 
 const app = express();
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "../public")));
 
 app.use("/api/cards", cardRouter);
 

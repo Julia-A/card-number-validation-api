@@ -25,6 +25,9 @@ $env:PORT = "4000"
 npm run dev
 ```
 
+Then I can open `http://localhost:3000` to try the API using a simple form.
+The homepage calls the same endpoint below; it doesn't do its own card checks.
+
 On macOS or Linux:
 
 ```bash
@@ -117,6 +120,7 @@ card was actually issued, is active, or has money in the account.
 ## Project structure
 
 ```text
+public/         The homepage, styles, and browser JavaScript
 src/
   controllers/  Handles requests and responses
   routes/       Defines API routes
